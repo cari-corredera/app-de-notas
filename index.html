@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <script src="./nota.js" defer></script>
+        <script src="./utils.js" defer></script>
+        <script src="./index.js" defer></script>
+        <title>App de notas</title>
+    </head>
+
+
+    <body onload="nota.recuperar()"><!--onload te recupera la info cuando volves a entar a la pag.-->
+
+        <div id="marco">
+            <header>
+                
+                <h1>Tablero de Notas</h1>
+
+                <nav>
+                    <input name="titulo" id="nuevaTarea" placeholder="Agregar nueva tarea"></input>
+
+                    <input name="descripcion" id="nuevaDescripcion" placeholder="Descripción breve de tarea"></input>
+
+                   <button id="agregar" onclick="nota.agregar()" > <img src="./iconos/agregar.png" alt="agregar nota"></button>
+                </nav>
+                
+            </header>    
+           
+
+            <main>
+
+                <section id="tablero">
+                    
+                    <div id="estadoNotas"><img class="imgTitulo" src="./Imagenes/tituloToDoList.jpg" alt="To Do List"><img class="imgTitulo" src="./Imagenes/tituloCheckedList.jpg" alt="Checked List">
+                    </div>
+
+                    <div id="contenedorNotas">
+                        <div id="toDoList"></div>
+                        <div id="checkedList"></div>
+                    </div>
+                </section>
+
+                    
+                <section id="historialTarea">
+
+                    <h3>HISTORIAL DE TAREAS REALIZADAS</h3>
+
+                    <div id="panelHistorial">
+                        <ul id="contenedorLista"></ul>
+                    </div>
+                    
+                    <button id="btnClear" onclick="utils.clear()"><img src="./iconos/clear.png" alt=""> </button>
+                </section>
+
+            </main>
+            
+        </div> <!--Fin del id marco-->
+
+    </body>
+</html>

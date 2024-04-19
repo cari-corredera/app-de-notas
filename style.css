@@ -1,0 +1,274 @@
+@import url(prompt.css);
+
+:root {
+    --font-raleway: "Raleway", sans-serif;
+    --font-lato: "Lato", sans-serif;
+    --color-amarillo:rgb(252, 252, 120);
+    --color-marronClaro: rgb(212, 125, 56);
+    --color-marronOscuro:rgb(117, 60, 17);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    background: url(./Imagenes/fondo.jpg) center/cover;
+    font-family: var(--font-raleway);
+}
+
+#marco{
+    max-width: 90%;
+    padding-left:15px ;
+    padding-right:15px ;
+    background-color:var(--color-marronClaro);
+    border-radius: 20px;
+    float: center;
+    align-items: center;
+    justify-content: center;
+    margin:auto;
+    padding-bottom: 50px;
+    flex-wrap: wrap;
+}
+
+
+
+/*Header incluye titulo input y botón agregar*/
+
+ h1,h3{
+    margin: 0.5em;
+    color:var(--color-amarillo);
+    font-weight: bolder;
+    text-shadow: 1px 1px 2px black;
+}
+
+h3{
+    margin-top: 1.5em;
+}
+
+header button{
+   background-color: white;
+   border-radius: 10px;
+   box-shadow: 2px 2px 5px black;
+   margin-left: 15px;
+   margin-top: 8px;
+}  
+
+
+header button img{
+    width: 40px;
+}
+
+header nav{
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1%;
+}
+
+
+input::placeholder{
+    padding-left: 10px;
+}
+
+
+#nuevaTarea, #nuevaDescripcion{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: large;
+    line-height: 2.5em;
+    width:30%;
+    padding-left: 10px;
+}
+
+#nuevaDescripcion{
+    width: 60%;
+}
+
+
+
+/*Main:incluye tablero To Do List, Checked List e Historial*/
+
+#tablero{
+    background:url(./Imagenes/fonfoTablero.jpg) center;
+    max-width: 1000px;
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;/*uno al lado del otro, no se vaya abajo cuando no hay lugar*/
+    border: 20px solid var(--color-marronClaro);
+    border-bottom: 0;
+    margin: auto;
+    border: 20px solid var(--color-marronOscuro);
+    border-radius: 20px;
+    box-shadow: 5px 5px 5px;
+}
+
+
+.imgTitulo{
+    width: 200px;
+    height: 80px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+
+
+#contenedorNotas{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+
+#toDoList, #checkedList {
+    width: 500px;
+    margin-top: 20px;
+    margin-left:auto;
+    padding-bottom: 15px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+
+
+/*Estilo para notas creadas*/
+
+.tarea{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    position: relative;
+    width: 180px;
+    height: 200px;
+    border: 2px;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    word-wrap: break-word;/*evita que el texto se salga de la nota*/
+    hyphens: auto;/*cuando quiebre la palabra pone un guión*/
+    background-color:var(--color-amarillo);
+    margin-right: 10px;
+    box-shadow: 5px 5px 15px black;
+}
+
+
+.tituloTarea, .descripcionTarea{
+    padding-top:1px;
+    padding-left: 15px;
+}
+
+
+#check,#editar,#borrar{
+    width: 40px;
+    background-color: white;
+    box-shadow: 1px 1px 2px grey;
+    border-radius: 10px;
+    position: absolute;
+    bottom: 2px;
+    left: 137px;
+}
+
+
+#editar{
+    left: 96px;
+}
+
+
+#borrar{
+    left: 2px;
+}
+
+
+#check img,#editar img,#borrar img{
+    width: 20px;
+}
+
+/*Historial*/
+
+#panelHistorial{
+    top: 20px;
+    margin: auto;
+    margin-top: 25px;
+    padding: 5px;
+    bottom: 30px;
+    width: 95%;
+    height: 120px;
+    color:#1c1a1a;
+    background: white;
+    overflow: hidden;
+    overflow-y: scroll;
+    background-image: none;
+    box-shadow: 5px 5px 5px;
+    box-sizing: border-box;
+    object-fit: contain;
+}
+
+
+.tareasArchivadas{
+    margin-left: 2em;
+    font-family:var(--font-lato);
+    text-align: left;
+}
+
+#historialTarea button {
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px black;
+    left:45%;
+    margin-top:30px;
+}
+
+#historialTarea button img{
+    width: 40px;
+}
+
+/*Diseño responsive*/
+
+@media (max-width: 1056px) {
+
+    .imgTitulo{
+        width: 200px;
+        height: 100px;
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+}
+
+@media (max-width: 806px) {
+    .imgTitulo{
+            width: 200px;
+            height: 100px;
+            margin-left: 20px;
+            margin-right: 20px;
+    }
+}
+
+@media (max-width: 655px) {
+    .imgTitulo{
+            width: 180px;
+            height: 80px;
+            margin-left: 5px;
+            margin-right: 5px;
+    }
+}
+
+@media (max-width: 564px) {
+    .imgTitulo{
+            width: 100px;
+            height: 50px;
+            margin-left: 20px;
+            margin-right: 20px;
+    }
+}
+
+
